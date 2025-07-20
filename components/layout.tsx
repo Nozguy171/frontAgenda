@@ -47,12 +47,17 @@ export default function Layout({ children }: { children: ReactNode }) {
           </header>
 
           {/* SIDEBAR / DRAWER */}
-          <aside
-            className={`fixed inset-y-0 left-0 bg-gray-800 text-gray-200 w-60 p-6 h-screen transform z-50
-                            transition-transform duration-300 ease-in-out
-                            md:translate-x-0 md:transition-none
-                            ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
-          >
+ <aside
+   className={`fixed inset-y-0 left-0 bg-gray-800 text-gray-200 w-60 p-6
+                h-screen overflow-y-auto transform z-50
+                transition-transform duration-300 ease-in-out
+                md:translate-x-0 md:transition-none
+                ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
+   style={{
+     /* Asegura que haya espacio por debajo de la safe-area (p.ej. iPhone) */
+     paddingBottom: 'env(safe-area-inset-bottom)',
+   }}
+ >
             <div className="flex flex-col h-full">
               {/* Cerrar menú en móvil */}
               <div className="md:hidden flex justify-end mb-4">
