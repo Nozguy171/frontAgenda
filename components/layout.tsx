@@ -89,20 +89,18 @@ export default function Layout({ children }: { children: ReactNode }) {
                 })}
               </ul>
 
-              {/* Logout button at bottom */}
-              <div className="mt-auto pt-4">
-                <button
-                  onClick={handleLogout}
-                  className="w-full flex items-center px-4 py-2 text-red-400 hover:text-red-300 hover:bg-gray-700 rounded transition"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
-                       viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1m0-10V5" />
-                  </svg>
-                  <span className="ml-2">Cerrar sesión</span>
-                </button>
-              </div>
+              {/* Cerrar sesión justo debajo de "Colaboradores" */}
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center px-4 py-2 mt-2 text-red-400 hover:text-red-300 hover:bg-gray-700 rounded transition"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1m0-10V5" />
+                </svg>
+                <span className="ml-2">Cerrar sesión</span>
+              </button>
             </div>
           </aside>
 
