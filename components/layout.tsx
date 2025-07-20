@@ -1,5 +1,6 @@
 // frontend/src/components/layout.tsx
 'use client'
+
 import { useState, useEffect, ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
@@ -11,14 +12,14 @@ export default function Layout({ children }: { children: ReactNode }) {
   const router = useRouter()
 
   const navItems = [
-    { href: '/prospectos',    label: 'Prospectos' },
-    { href: '/citas',         label: 'Citas' },
-    { href: '/seguimiento',   label: 'Seguimiento' },
-    { href: '/rechazados',    label: 'Rechazados' },
-    { href: '/anexados',      label: 'Anexados' },
-    { href: '/historial',     label: 'Historial' },
-    { href: '/llamadas',      label: 'Llamadas' },
-    { href: '/colaboradores', label: 'Colaboradores' },
+    { href: '/prospectos',    label: 'Prospectos'     },
+    { href: '/citas',         label: 'Citas'          },
+    { href: '/seguimiento',   label: 'Seguimiento'    },
+    { href: '/rechazados',    label: 'Rechazados'     },
+    { href: '/anexados',      label: 'Anexados'       },
+    { href: '/historial',     label: 'Historial'      },
+    { href: '/llamadas',      label: 'Llamadas'       },
+    { href: '/colaboradores', label: 'Colaboradores'  },
   ]
 
   useEffect(() => {
@@ -47,17 +48,17 @@ export default function Layout({ children }: { children: ReactNode }) {
           </header>
 
           {/* SIDEBAR / DRAWER */}
-<aside
-  className={`fixed inset-y-0 left-0 bg-gray-800 text-gray-200 w-60 p-6
-              h-screen overflow-y-auto transform z-50
-              transition-transform duration-300 ease-in-out
-              md:translate-x-0 md:transition-none
-              ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
-  style={{
-    // safe-area para iOS + 1rem fijo de fallback para Android/browser UI
-    paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 1rem)'
-  }}
->
+          <aside
+            className={`fixed inset-y-0 left-0 bg-gray-800 text-gray-200 w-60 p-6
+                        h-screen overflow-y-auto transform z-50
+                        transition-transform duration-300 ease-in-out
+                        md:translate-x-0 md:transition-none
+                        ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
+            style={{
+              // safe-area para iOS + 1rem fijo de fallback para Android/browser UI
+              paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 1rem)'
+            }}
+          >
             <div className="flex flex-col h-full">
               {/* Cerrar menú en móvil */}
               <div className="md:hidden flex justify-end mb-4">
@@ -115,10 +116,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         </>
       )}
 
-<main className="flex-1 w-full bg-gray-900 text-gray-100 ml-0 md:ml-60">
-  {children}
-</main>
-
+      {/* MAIN CONTENT */}
+      <main className="flex-1 w-full bg-gray-900 text-gray-100 ml-0 md:ml-60">
+        {children}
+      </main>
     </div>
   )
 }
