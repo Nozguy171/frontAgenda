@@ -1,5 +1,5 @@
 // frontend/src/services/api.ts
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://backagenda-production.up.railway.app/'
 
 export async function apiFetch(path: string, opts: RequestInit = {}) {
   // Obtener token JWT del localStorage (solo en cliente)
