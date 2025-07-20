@@ -54,7 +54,8 @@ export default function Layout({ children }: { children: ReactNode }) {
               md:translate-x-0 md:transition-none
               ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}
   style={{
-    paddingBottom: 'env(safe-area-inset-bottom)', // asegura espacio abajo en iOS/Android
+    // safe-area para iOS + 1rem fijo de fallback para Android/browser UI
+    paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 1rem)'
   }}
 >
             <div className="flex flex-col h-full">
